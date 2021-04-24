@@ -11,36 +11,4 @@
   grid-gap: 10px;
 
 }
-.header {
-  grid-area: h;
-  background-color: cadetblue;
-}
-.header img {
-  width: 60px;
-  margin-left: 10px;
-}
-.nav {
-  grid-area: n;
-  background-color: cadetblue;
-}
-.navitem {
-  margin: 10px;
-}
-.navRef {
-  grid-area: a;
-  margin-bottom: 20px;
-}
-.profile {
-  grid-area: c;
-}
-.profile_img {
-  max-width: 100%;
-  height: 200px;
-  overflow: hidden;
-}
-.profile_img img {
-  width: 100%;
-  height:100%;
-  object-fit: cover;
-  object-position: center;
-}
+

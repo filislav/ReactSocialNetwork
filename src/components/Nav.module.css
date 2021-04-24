@@ -1,0 +1,15 @@
+.nav {
+    grid-area: n;
+    background-color: cadetblue;
+}
+.navitem {
+    color: aliceblue;
+    margin: 10px;
+}
+.navitem.active {
+    color: gold;
+}
+.navRef {
+    grid-area: a;
+    margin-bottom: 20px;
+}
