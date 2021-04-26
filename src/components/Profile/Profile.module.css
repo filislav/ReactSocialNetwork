@@ -12,10 +12,3 @@
     object-fit: cover;
     object-position: center;
 }
-.posts {
-    background-color: bisque;
-}
-.post {
-    color: brown;
-    margin-left: 10px;
-}

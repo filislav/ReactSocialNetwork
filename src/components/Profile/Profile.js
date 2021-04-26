@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import s from './Profile.module.css';
+import MyPosts from './MyPosts/MyPosts';
 
 class Profile extends Component {
     render() {
@@ -11,21 +12,7 @@ class Profile extends Component {
                 <div>
                     Ava+Description
                 </div>
-                <div>
-                    MyPost
-                 <div>
-                        New Post
-                 </div>
-                </div>
-                <div className={s.posts}>
-                    Posts
-                    <div className={s.post}>
-                        Post 1
-                    </div>
-                    <div className={s.post}>
-                        Post2
-                    </div>
-                </div>
+                <MyPosts />
             </div>
         )
     }
