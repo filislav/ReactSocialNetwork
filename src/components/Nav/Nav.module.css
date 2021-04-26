@@ -10,6 +10,8 @@
     color: gold;
 }
 .navRef {
+    color:aliceblue;
     grid-area: a;
     margin-bottom: 20px;
+    text-decoration: none;
 }
