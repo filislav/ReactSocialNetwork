@@ -6,12 +6,10 @@
     color: aliceblue;
     margin: 10px;
 }
-.navitem.active {
-    color: gold;
-}
-.navRef {
+.navitem a {
     color:aliceblue;
-    grid-area: a;
-    margin-bottom: 20px;
     text-decoration: none;
+}
+.navitem a.active {
+    color: gold;
 }
