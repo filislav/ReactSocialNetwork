@@ -1,14 +1,12 @@
 import React,{Component} from 'react';
 import s from './Dialogs.module.css';
+import DialogItems from './DialogItems/DialogItems';
 
 class Dialogs extends Component{
     render(){
         return(
             <div className={s.dialog}>
-                <div className={s.dialog_items}>
-                    <div className={`${s.dialog_item} ${s.active}`}>Slava</div>
-                    <div className={s.dialog_item}>Andrew</div>
-                </div>
+                <DialogItems />
                 <div className={s.messages}>
                     <div className={s.message}>Привет</div>
                     <div className={s.message}>Как дела?</div>
