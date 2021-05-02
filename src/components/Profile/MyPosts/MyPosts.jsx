@@ -4,20 +4,17 @@ import Post from './Post/Post';
 
 class MyPosts extends Component {
     render() {
+        let postsElements = this.props.posts.map(p=>(<Post message ={p.message} likeCount={p.likeCount}/>));
         return (
-            <div>
-                <div>
+            <div>                 
+                <div className={s.newPost}>
                     <p>New post: </p>
-                <div>
-                    <textarea></textarea>
-                    <br />
-                    <button>Send</button>
+                    <div className={s.textBlock}><textarea className={s.text}></textarea></div>                   
+                    <div className={s.button} ><button className={s.butt}>Send</button></div>
                  </div>
-                </div>
                 <div className={s.posts}>
-                    Posts:
-                    <Post message = 'Hi, how are you?' likeCount='34'/>
-                    <Post message = "It's my first post" likeCount='56'/>
+                    <p>Posts: </p>
+                    {postsElements}
                 </div>
             </div>
         )

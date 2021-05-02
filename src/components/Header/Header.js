@@ -5,7 +5,8 @@ class Header extends Component {
     render() {
         return (
             <header className={s.header}>
-                <img src="https://api.freelogodesign.org/assets/thumb/logo/22073155_400.png" />
+                <div><img src="img/snLogo.png" /></div>
+                <div><p className={s.name}>SoN</p></div>               
             </header>
         )
     }

@@ -1,8 +1,19 @@
 .header {
     grid-area: h;
     background-color: cadetblue;
+    display:flex;
 }
   .header img {
-    width: 60px;
+    margin-top: 5px;
+    width: 50px;
     margin-left: 10px;
+    background-color: gold;
+    border:1px solid gold;
+    border-radius: 4px;
+}
+.name{
+  font-size: 20px;
+  color: gold;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px white;
 }

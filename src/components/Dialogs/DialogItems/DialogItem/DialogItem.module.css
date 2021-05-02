@@ -1,3 +1,26 @@
-.dialog_items .active {
-    color: gold;
+.dialog_item .active {
+    color:white;
+    background-color:cadetblue;
+    box-shadow: 0 0 3px 2px gold;
+}
+.dialog_item a {
+    display:block;
+    color: cadetblue;
+    border: 1px solid white;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align:center;
+    padding-top: 10px;
+    height:100%;
+    
+}
+.dialog_item {
+    width:80%;
+    margin-bottom: 30px;    
+    height: 30px;
+}
+hr{
+    border:none;
+    background-color: cadetblue;
+    height:2px;
 }
