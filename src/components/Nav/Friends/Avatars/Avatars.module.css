@@ -1,0 +1,8 @@
+.avatars{
+    display:flex;
+    padding:10px;
+    background-color: rgb(130, 184, 186);
+    color:white;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

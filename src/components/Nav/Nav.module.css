@@ -1,6 +1,7 @@
 .nav {
     grid-area: n;
     background-color: cadetblue;
+    height:100vh;
 }
 .navitem {
     color: aliceblue;

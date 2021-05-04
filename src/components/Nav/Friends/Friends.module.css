@@ -1,0 +1,9 @@
+.friends_container{
+    border:1px solid transparent;
+    background-color: rgb(130, 184, 186);
+    color:white;
+    border-radius: 5px;
+}
+.block_name{
+    margin:10px;
+}

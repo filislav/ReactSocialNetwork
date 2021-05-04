@@ -11,16 +11,16 @@ import { BrowserRouter,Route } from 'react-router-dom';
 
 
 
-class App extends Component {
+class App extends Component { 
   render() {
     return (
       <BrowserRouter>
         <div className='app-wrapper'>
           <Header />
-          <Nav />
+          <Nav friends={this.props.state.nav.friends}/>
           <div className="app-wrapper-content">
-            <Route path="/profile" component={Profile} />
-            <Route path="/dialogs" component={Dialogs} />
+            <Route path="/profile" render={()=><Profile state={this.props.state.profile}/>} />
+            <Route path="/dialogs" render={()=><Dialogs state={this.props.state.dialogs} />} />
             <Route path="/news" component={News} />
             <Route path="/music" component={Music} />
             <Route path="/settings" component={Settings} />
