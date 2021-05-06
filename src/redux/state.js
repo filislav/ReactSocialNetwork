@@ -1,6 +1,6 @@
 import reRenederEntireTree from './../render';
 
-export let state ={
+let state ={
     profile:{
         posts:[{id:1,message:'Hi, how are you?',likeCount:34},
         {id:2,message:"It's my first post",likeCount:56},
