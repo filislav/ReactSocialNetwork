@@ -19,7 +19,7 @@ class App extends Component {
           <Header />
           <Nav friends={this.props.state.nav.friends}/>
           <div className="app-wrapper-content">
-            <Route exact path="/" render={()=><Profile state = {this.props.state.profile} />} />
+            <Route exact path="/" render={()=><Profile state = {this.props.state.profile} addPost={this.props.addPost}/>} />
             <Route path="/profile" render={()=><Profile state={this.props.state.profile} addPost={this.props.addPost}/>} />
             <Route path="/dialogs" render={()=><Dialogs state={this.props.state.dialogs} />} />
             <Route path="/news" component={News} />
