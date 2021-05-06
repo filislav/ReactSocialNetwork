@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import s from './Dialogs.module.css';
 import DialogItems from './DialogItems/DialogItems';
 import Messages from './Messages/Messages';
+import DialogInput from './Messages/DialogInput/DialogInput';
 
 class Dialogs extends Component{
     render(){       

@@ -12,7 +12,7 @@ class Profile extends Component {
                 </div>
                 <div className={s.block}>
                     <ProfileInfo />
-                    <MyPosts posts={this.props.state.posts} />
+                    <MyPosts posts={this.props.state.posts} addPost={this.props.addPost}/>
                 </div>
             </div>
         )

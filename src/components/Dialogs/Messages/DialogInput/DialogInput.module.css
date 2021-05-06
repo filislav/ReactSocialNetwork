@@ -1,0 +1,31 @@
+.dialogInput{
+    position: absolute;
+    display:flex;
+    left:0px;
+    bottom:70px;
+    height:90px;
+    width:98%;
+    background-color: rgb(130, 184, 186);
+    border: 1px solid transparent;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+.textBlock{
+    margin-bottom:50px;
+    padding-left: 10px;
+    padding-right: 20px;
+    margin-top: 5px;
+    width:100%;
+}
+.textBlock .text{
+    font-size: 14px;
+    border:2px solid gold;
+    border-radius: 5px;
+    width:100%;
+}
+.send{
+    position:absolute;
+    right:12px;
+    bottom:10px;
+    width:100px;
+}

@@ -1,4 +1,6 @@
-let state ={
+import reRenederEntireTree from './../render';
+
+export let state ={
     profile:{
         posts:[{id:1,message:'Hi, how are you?',likeCount:34},
         {id:2,message:"It's my first post",likeCount:56},
@@ -14,5 +16,9 @@ let state ={
         {photo_url:"/img/friend.jpg",name:"Johnson"}]
     }
 }    
+export let addPost = (postMessage)=>{    
+    state.profile.posts.push({id:4,message:postMessage,likeCount:22})
+    reRenederEntireTree(state);
+};
 
 export default state;
