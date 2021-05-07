@@ -9,7 +9,8 @@ class Messages extends Component{
         return(
             <div className={s.messages}>
                 {messagesElements}
-                <DialogInput />
+                <DialogInput updateNewMessageText={this.props.updateNewMessageText} 
+                addMessage={this.props.addMessage} newMessage={this.props.newMessage}/>
             </div>
         )
     }

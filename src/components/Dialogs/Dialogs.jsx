@@ -9,7 +9,9 @@ class Dialogs extends Component{
         return(
             <div className={s.dialog}>
                 <DialogItems dialogs={this.props.state.dialogs}/>
-                <Messages messages = {this.props.state.messages}/>
+                <Messages messages = {this.props.state.messages} 
+                updateNewMessageText={this.props.updateNewMessageText} addMessage={this.props.addMessage}
+                newMessage={this.props.state.newMessageText}/>
             </div>
         )
     }

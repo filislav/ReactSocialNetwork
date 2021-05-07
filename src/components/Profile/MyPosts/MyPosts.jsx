@@ -8,15 +8,17 @@ class MyPosts extends Component {
         let postsElements = this.props.posts.map(p=>(<Post message ={p.message} likeCount={p.likeCount}/>));
         let newPost = React.createRef();     
         let addPost = ()=>{
-            this.props.addPost(newPost.current.value);
-            newPost.current.value ='';
+            this.props.addPost();
         };
-
+        let onPostChange = ()=>{
+            this.props.updateNewPostChange(newPost.current.value);
+        };
         return (
             <div>                 
                 <div className={s.newPost}>
                     <p>New post: </p>
-                    <div className={s.textBlock}><textarea ref={newPost} className={s.text}></textarea></div>                   
+                    <div className={s.textBlock}><textarea onChange={onPostChange} ref={newPost} className={s.text} 
+                    value={this.props.newPostText} placeholder="Enter your message..." /></div>                   
                     <div className={s.button} ><button className={s.butt} onClick={addPost}>Send</button></div>
                  </div>
                 <div className={s.posts}>
