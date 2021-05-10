@@ -1,5 +1,4 @@
-import reRenederEntireTree from './../render';
-
+let reRenederEntireTree;
 let state ={
     profile:{
         posts:[{id:1,message:'Hi, how are you?',likeCount:34},
@@ -35,5 +34,8 @@ export let updateNewPostChange = (newText)=>{
 export let updateNewMessageText = (newText)=>{
     state.dialogs.newMessageText = newText;
     reRenederEntireTree(state);
+}
+export const subscribe =(observer) =>{
+    reRenederEntireTree = observer;
 }
 export default state;
