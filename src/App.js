@@ -13,18 +13,19 @@ import { BrowserRouter,Route } from 'react-router-dom';
 
 class App extends Component { 
   render() {
+    let state = this.props.store.getState();
     return (
       <BrowserRouter>
         <div className='app-wrapper'>
           <Header />
-          <Nav friends={this.props.state.nav.friends}/>
+          <Nav friends={state.nav.friends}/>
           <div className="app-wrapper-content">
-            <Route exact path="/" render={()=><Profile state = {this.props.state.profile} 
-            updateNewPostChange={this.props.updateNewPostChange} addPost={this.props.addPost}/>} />
-            <Route path="/profile" render={()=><Profile state={this.props.state.profile}  
-            updateNewPostChange={this.props.updateNewPostChange} addPost={this.props.addPost}/>} />
-            <Route path="/dialogs" render={()=><Dialogs state={this.props.state.dialogs} 
-            updateNewMessageText={this.props.updateNewMessageText} addMessage={this.props.addMessage}/>} />
+            <Route exact path="/" render={()=><Profile state = {state.profile} 
+            updateNewPostChange={this.props.store.updateNewPostChange} addPost={this.props.store.addPost}/>} />
+            <Route path="/profile" render={()=><Profile state={state.profile}  
+            updateNewPostChange={this.props.store.updateNewPostChange} addPost={this.props.store.addPost}/>} />
+            <Route path="/dialogs" render={()=><Dialogs state={state.dialogs} 
+            updateNewMessageText={this.props.store.updateNewMessageText} addMessage={this.props.store.addMessage}/>} />
             <Route path="/news" component={News} />
             <Route path="/music" component={Music} />
             <Route path="/settings" component={Settings} />
