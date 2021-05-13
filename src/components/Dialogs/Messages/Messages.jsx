@@ -5,12 +5,11 @@ import DialogInput from './DialogInput/DialogInput';
 
 class Messages extends Component{
     render(){
-        let messagesElements=this.props.messages.map((m)=><Message message={m.message} />);
+        let messagesElements=this.props.state.messages.map((m)=><Message message={m.message} />);
         return(
             <div className={s.messages}>
                 {messagesElements}
-                <DialogInput updateNewMessageText={this.props.updateNewMessageText} 
-                addMessage={this.props.addMessage} newMessage={this.props.newMessage}/>
+                <DialogInput state={this.props.state}/>
             </div>
         )
     }

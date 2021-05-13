@@ -20,12 +20,9 @@ class App extends Component {
           <Header />
           <Nav friends={state.nav.friends}/>
           <div className="app-wrapper-content">
-            <Route exact path="/" render={()=><Profile state = {state.profile} 
-            updateNewPostChange={this.props.store.updateNewPostChange} addPost={this.props.store.addPost}/>} />
-            <Route path="/profile" render={()=><Profile state={state.profile}  
-            updateNewPostChange={this.props.store.updateNewPostChange} addPost={this.props.store.addPost}/>} />
-            <Route path="/dialogs" render={()=><Dialogs state={state.dialogs} 
-            updateNewMessageText={this.props.store.updateNewMessageText} addMessage={this.props.store.addMessage}/>} />
+            <Route exact path="/" render={()=><Profile state = {state.profile}/>} />
+            <Route path="/profile" render={()=><Profile state={state.profile}/>} />
+            <Route path="/dialogs" render={()=><Dialogs state={state.dialogs}/>} />
             <Route path="/news" component={News} />
             <Route path="/music" component={Music} />
             <Route path="/settings" component={Settings} />
