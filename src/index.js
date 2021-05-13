@@ -4,7 +4,6 @@ import store from './redux/state';
 import ReactDOM from 'react-dom';
 import React from 'react';
 import App from './App';
-import {addPost,updateNewPostChange,addMessage,updateNewMessageText}from './redux/state';
 
 let state = store.getState();
 let reRenederEntireTree = (state)=>{
