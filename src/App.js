@@ -13,7 +13,7 @@ import { BrowserRouter,Route } from 'react-router-dom';
 
 class App extends Component { 
   render() {
-    let state = this.props.store.getState();
+    let state = this.props.store;
     return (
       <BrowserRouter>
         <div className='app-wrapper'>

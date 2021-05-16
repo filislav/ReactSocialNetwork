@@ -1,5 +1,5 @@
 let store = {
-    reRenederEntireTree(){
+    _callSubscriber(){
         console.log('no observers exists');
     },
     _state:{
@@ -12,11 +12,11 @@ let store = {
             addPost(){    
                 this.posts.push({id:4,message:this.newPostText,likeCount:22})
                 this.newPostText = '';
-                store.reRenederEntireTree();
+                store._callSubscriber(store._state);
             },
             updateNewPostChange(newText){
                 this.newPostText = newText;
-                store.reRenederEntireTree();
+                store._callSubscriber(store._state);
             },
             
         },
@@ -27,11 +27,11 @@ let store = {
             addMessage(){
                 this.messages.push({message:this.newMessageText,id:4})
                 this.newMessageText ='';
-                store.reRenederEntireTree();
+                store._callSubscriber(store._state);
             },
             updateNewMessageText(newText){
                 this.newMessageText = newText;
-                store.reRenederEntireTree();
+                store._callSubscriber(store._state);
             },
         },
         nav:{
@@ -41,7 +41,7 @@ let store = {
     }, 
 
         subscribe(observer){
-        this.reRenederEntireTree = observer;
+        this._callSubscriber = observer;
     },
         getState(){
             return this._state;
