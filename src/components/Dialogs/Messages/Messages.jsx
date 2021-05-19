@@ -9,7 +9,7 @@ class Messages extends Component{
         return(
             <div className={s.messages}>
                 {messagesElements}
-                <DialogInput state={this.props.state}/>
+                <DialogInput state={this.props.state} dispatch={this.props.dispatch}/>
             </div>
         )
     }

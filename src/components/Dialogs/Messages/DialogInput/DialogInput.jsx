@@ -5,10 +5,10 @@ class DialogInput extends Component{
     render(){
         let dialogRef = React.createRef();
         let addMessage = ()=>{
-            this.props.state.addMessage();
+            this.props.dispatch({type:'ADD-MESSAGE'});
         }
         let updateMessage =()=>{
-            this.props.state.updateNewMessageText(dialogRef.current.value);
+            this.props.dispatch({type:'UPDATE-NEW-MESSAGE-TEXT',newText:dialogRef.current.value});
         }
         return(
             <div className={s.dialogInput}>

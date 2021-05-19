@@ -8,10 +8,10 @@ class MyPosts extends Component {
         let postsElements = this.props.state.posts.map(p=>(<Post message ={p.message} likeCount={p.likeCount}/>));
         let newPost = React.createRef();     
         let addPost = ()=>{
-            this.props.state.addPost();
+            this.props.dispatch({type:'ADD-POST'});
         };
         let onPostChange = ()=>{
-            this.props.state.updateNewPostChange(newPost.current.value);
+            this.props.dispatch({type:'UDATE-NEW-POST-CHANGE',newText:newPost.current.value});
         };
         return (
             <div>                 
