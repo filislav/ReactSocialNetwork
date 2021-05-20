@@ -2,16 +2,18 @@ import React, { Component } from 'react';
 import News from '../../News/News';
 import s from './MyPosts.module.css';
 import Post from './Post/Post';
+import {addPostActionCreator, updateNewPostTextActionCreator} from './../../../redux/state';
+
 
 class MyPosts extends Component {
     render() {
         let postsElements = this.props.state.posts.map(p=>(<Post message ={p.message} likeCount={p.likeCount}/>));
         let newPost = React.createRef();     
         let addPost = ()=>{
-            this.props.dispatch({type:'ADD-POST'});
+            this.props.dispatch(addPostActionCreator());
         };
         let onPostChange = ()=>{
-            this.props.dispatch({type:'UDATE-NEW-POST-CHANGE',newText:newPost.current.value});
+            this.props.dispatch(updateNewPostTextActionCreator(newPost.current.value));
         };
         return (
             <div>                 

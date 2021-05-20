@@ -55,4 +55,16 @@ let store = {
         }
           
 }
+export const addPostActionCreator = ()=>{
+    return {
+        type:'ADD-POST'
+    }
+}
+export const updateNewPostTextActionCreator = (text)=>{
+    return {
+        type:'UDATE-NEW-POST-CHANGE',
+        newText: text
+    }
+}
+
 export default store;
