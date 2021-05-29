@@ -1,3 +1,8 @@
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_CHANGE = 'UDATE-NEW-POST-CHANGE'
+const ADD_MESSAGE = 'ADD-MESSAGE';
+const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
+
 let store = {
     _callSubscriber(){
         console.log('no observers exists');
@@ -37,34 +42,29 @@ let store = {
             return this._state;
         },
         dispatch(action){
-            if(action.type === 'ADD-POST'){
+            if(action.type === ADD_POST){
                 this._state.profile.posts.push({id:4,message:this._state.profile.newPostText,likeCount:22})
                 this._state.profile.newPostText = '';
                 store._callSubscriber(this._state);
             }
-            if(action.type === 'UDATE-NEW-POST-CHANGE'){
+            if(action.type === UPDATE_NEW_POST_CHANGE){
                 this._state.profile.newPostText = action.newText;
                 store._callSubscriber(this._state);
             }
-            if(action.type ==='ADD-MESSAGE'){
+            if(action.type === ADD_MESSAGE){
                 this._state.dialogs._addMessage();
             }
-            if(action.type === 'UPDATE-NEW-MESSAGE-TEXT'){
+            if(action.type === UPDATE_NEW_MESSAGE_TEXT){
                 this._state.dialogs._updateNewMessageText(action.newText);
             }
         }
           
 }
-export const addPostActionCreator = ()=>{
-    return {
-        type:'ADD-POST'
-    }
-}
-export const updateNewPostTextActionCreator = (text)=>{
-    return {
-        type:'UDATE-NEW-POST-CHANGE',
-        newText: text
-    }
-}
+export const addPostActionCreator = ()=>({type:ADD_POST});
+export const updateNewPostTextActionCreator = (text)=>
+({type:UPDATE_NEW_POST_CHANGE,newText: text});
+export const addMessageActionCreator = ()=>({type:ADD_MESSAGE});
+export const updateNewMessageTextActionCreator = (text)=>
+({type:UPDATE_NEW_MESSAGE_TEXT,newText:text});
 
 export default store;

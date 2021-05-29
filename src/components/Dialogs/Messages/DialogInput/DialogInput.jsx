@@ -1,14 +1,15 @@
 import React,{Component} from 'react';
 import s from './DialogInput.module.css';
+import {addMessageActionCreator,updateNewMessageTextActionCreator} from './../../../../redux/state';
 
 class DialogInput extends Component{
     render(){
         let dialogRef = React.createRef();
         let addMessage = ()=>{
-            this.props.dispatch({type:'ADD-MESSAGE'});
+            this.props.dispatch(addMessageActionCreator());
         }
         let updateMessage =()=>{
-            this.props.dispatch({type:'UPDATE-NEW-MESSAGE-TEXT',newText:dialogRef.current.value});
+            this.props.dispatch(updateNewMessageTextActionCreator(dialogRef.current.value));
         }
         return(
             <div className={s.dialogInput}>
