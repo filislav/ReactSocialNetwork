@@ -8,6 +8,7 @@ import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import { BrowserRouter,Route } from 'react-router-dom';
+import Preloader from './components/Preloader/Preloader';
 
 
 
@@ -17,6 +18,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className='app-wrapper'>
+          <Preloader />
           <Header />
           <Nav friends={state.nav.friends}/>
           <div className="app-wrapper-content">

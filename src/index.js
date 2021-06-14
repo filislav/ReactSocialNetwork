@@ -4,6 +4,8 @@ import store from './redux/state';
 import ReactDOM from 'react-dom';
 import React from 'react';
 import App from './App';
+import './components/Preloader/preloader.css';
+
 
 let reRenederEntireTree = (state)=>{
     ReactDOM.render(
