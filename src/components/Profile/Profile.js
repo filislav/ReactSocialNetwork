@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import s from './Profile.module.css';
-import MyPosts from './MyPosts/MyPosts';
+import MyPostContainer from './MyPosts/MyPostContainer';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 class Profile extends Component {
@@ -12,7 +12,7 @@ class Profile extends Component {
                 </div>
                 <div className={s.block}>
                     <ProfileInfo />
-                    <MyPosts state ={this.props.state} dispatch={this.props.dispatch}/>
+                    <MyPostContainer state ={this.props.state} dispatch={this.props.dispatch}/>
                 </div>
             </div>
         )
