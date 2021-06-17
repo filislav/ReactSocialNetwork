@@ -1,7 +1,15 @@
 export const ADD_POST = 'ADD-POST';
 export const UPDATE_NEW_POST_CHANGE = 'UDATE-NEW-POST-CHANGE';
 
-export const profileReducer = (state,action)=>{
+let initialState = {
+    posts:[{id:1,message:'Hi, how are you?',likeCount:34},
+    {id:2,message:"It's my first post",likeCount:56},
+    {id:3,message:"It's my second post",likeCount:13}
+    ],
+    newPostText:'',          
+};
+
+export const profileReducer = (state = initialState,action)=>{
     switch(action.type){
         case ADD_POST:{
             if(state.newPostText!==''){
