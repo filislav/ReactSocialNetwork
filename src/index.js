@@ -5,12 +5,15 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import App from './App';
 import './components/Preloader/preloader.css';
+import StoreContext from './StoreContext';
 
 
 let reRenederEntireTree = (state) => {
     ReactDOM.render(
       <React.StrictMode>
-        <App store={state} dispatch={store.dispatch.bind(store)}/>
+        <StoreContext.Provider value={store}>
+          <App store={state} dispatch={store.dispatch.bind(store)}/>
+        </StoreContext.Provider>
       </React.StrictMode>,
       document.getElementById('root')
     );
