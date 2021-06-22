@@ -10,24 +10,26 @@ let initialState = {
 };
 
 export const profileReducer = (state = initialState,action)=>{
+    let stateCopy = {...state}; //копия создается потому что если мы изменили state то connect сравнивает измен.state с измен.state и
+    //ничего не перерисовывает.
     switch(action.type){
         case ADD_POST:{
             if(state.newPostText!==''){
-                state.posts.push({id:4,message:state.newPostText,likeCount:22})
-                console.log(state.posts);
-                state.newPostText = '';
+                stateCopy.posts = [...state.posts];
+                stateCopy.posts.push({id:4,message:state.newPostText,likeCount:22});
+                stateCopy.newPostText = '';
             }
             break;
         }
         case UPDATE_NEW_POST_CHANGE:{
-            state.newPostText = action.newText;
+            stateCopy.newPostText = action.newText;
             break;
         }
         default:{
             return state;
         }
     }
-    return state;
+    return stateCopy;
 }
 export const addPostActionCreator = ()=>({type:ADD_POST});
 export const updateNewPostTextActionCreator = (text)=>
