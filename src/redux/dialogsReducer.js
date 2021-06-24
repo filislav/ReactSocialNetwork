@@ -12,8 +12,7 @@ const dialogsReducer = (state = initialState,action) => {
     switch(action.type){
         case ADD_MESSAGE:{
             if(state.newMessageText!==''){
-                stateCopy.messages = [...state.messages];
-                stateCopy.messages.push({message:state.newMessageText,id:4})
+                stateCopy.messages = [...state.messages,{message:state.newMessageText,id:4}];
                 stateCopy.newMessageText ='';
             }
             break;
