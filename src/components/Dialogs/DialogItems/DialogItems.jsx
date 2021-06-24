@@ -4,7 +4,7 @@ import DialogItem from './DialogItem/DialogItem';
 
 class DialogItems extends Component{
     render(){       
-        let dialogElements = this.props.dialogs.map((dialog)=>(<DialogItem name={dialog.name} id={dialog.id}/>));
+        let dialogElements = this.props.dialogs.map((dialog)=>(<DialogItem name={dialog.name} key={dialog.id} id={dialog.id}/>));
             return(
                 <div className={s.dialog_items}>
                     {dialogElements}

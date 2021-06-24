@@ -5,7 +5,7 @@ import DialogInput from './DialogInput/DialogInput';
 
 class Messages extends Component{
     render(){
-        let messagesElements=this.props.messages.map((m)=><Message message={m.message} />);
+        let messagesElements=this.props.messages.map((m)=><Message message={m.message} key={m.id}/>);
         return(
             <div className={s.messages}>
                 {messagesElements}
