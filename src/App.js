@@ -1,14 +1,14 @@
 import './App.css';
 import { Component } from 'react';
 import Header from './components/Header/Header';
-import Nav from './components/Nav/Nav';
 import Profile from './components/Profile/Profile';
-import Dialogs from './components/Dialogs/Dialogs';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import { BrowserRouter,Route } from 'react-router-dom';
 import Preloader from './components/Preloader/Preloader';
+import NavContainer from './components/Nav/NavContainer';
 
 
 
@@ -20,13 +20,11 @@ class App extends Component {
         <div className='app-wrapper'>
           <Preloader />
           <Header />
-          <Nav friends={state.nav.friends}/>
+          <NavContainer />
           <div className="app-wrapper-content">
             <Route exact path="/" render={()=><Profile />}/>
-            <Route path="/profile" render={()=><Profile state={state.profile} 
-            dispatch={this.props.dispatch}/>} />
-            <Route path="/dialogs" render={()=><Dialogs state={state.dialogs} 
-            dispatch={this.props.dispatch}/>} />
+            <Route path="/profile" render={()=><Profile />} />
+            <Route path="/dialogs" render={()=><DialogsContainer />} />
             <Route path="/news" component={News} />
             <Route path="/music" component={Music} />
             <Route path="/settings" component={Settings} />

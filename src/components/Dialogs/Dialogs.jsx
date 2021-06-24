@@ -8,8 +8,9 @@ class Dialogs extends Component{
     render(){       
         return(
             <div className={s.dialog}>
-                <DialogItems state = {this.props.state}/>
-                <Messages state = {this.props.state} dispatch={this.props.dispatch}/>
+                <DialogItems dialogs = {this.props.dialogs}/>
+                <Messages messages = {this.props.messages} updateNewMessageText={this.props.updateNewMessageText}
+                addNewMessage={this.props.addNewMessage} newMessageText={this.props.newMessageText}/>
             </div>
         )
     }

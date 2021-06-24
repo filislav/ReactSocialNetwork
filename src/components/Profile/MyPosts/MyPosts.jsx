@@ -6,6 +6,7 @@ import Post from './Post/Post';
 
 class MyPosts extends Component {
     render() {
+        debugger;
         let postsElements = this.props.posts.map(p=>(<Post message ={p.message} likeCount={p.likeCount}/>));
         let newPost = React.createRef();     
         let addPost = ()=>{

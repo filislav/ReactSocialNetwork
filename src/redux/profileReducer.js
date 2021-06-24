@@ -14,6 +14,7 @@ export const profileReducer = (state = initialState,action)=>{
     //ничего не перерисовывает.
     switch(action.type){
         case ADD_POST:{
+            debugger;
             if(state.newPostText!==''){
                 stateCopy.posts = [...state.posts];
                 stateCopy.posts.push({id:4,message:state.newPostText,likeCount:22});
