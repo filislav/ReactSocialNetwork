@@ -13,6 +13,7 @@ class Nav extends Component {
                 <div className={s.navitem}><NavLink to="/news" activeClassName={s.active}>News</NavLink></div>
                 <div className={s.navitem}><NavLink to="/music" activeClassName={s.active}>Music</NavLink></div>
                 <div className={s.navitem}><NavLink to="/settings" activeClassName={s.active}>Settings</NavLink></div>
+                <div className={s.navitem}><NavLink to="/users" activeClassName={s.active}>Users</NavLink></div>
                 <Friends friends={this.props.friends}/>
             </nav>
         )

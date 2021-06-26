@@ -9,6 +9,7 @@ import Settings from './components/Settings/Settings';
 import { BrowserRouter,Route } from 'react-router-dom';
 import Preloader from './components/Preloader/Preloader';
 import NavContainer from './components/Nav/NavContainer';
+import UsersContainer from './components/Users/UsersContainer';
 
 
 
@@ -28,6 +29,7 @@ class App extends Component {
             <Route path="/news" component={News} />
             <Route path="/music" component={Music} />
             <Route path="/settings" component={Settings} />
+            <Route path="/users" render={()=><UsersContainer />} />
           </div>
         </div>
       </BrowserRouter>
