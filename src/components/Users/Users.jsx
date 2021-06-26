@@ -2,14 +2,7 @@ import React from 'react';
 import s from './Users.module.css';
 
 
-let Users = (props)=>{
-    if(props.users.length===0){ //так делать не првильно это для демо
-        props.setUsers([
-            {id:1,photoUrl:'img/avatar.png',followed:false,fullName:'Dmitry K.',location:{country:'Russia',city:'Moscow'},status:"I'am here"},
-            {id:2,photoUrl:'img/avatar.png',followed:true,fullName:'Mickhail S.',location:{country:'Russia',city:'Samara'},status:"Stylish"},
-            {id:3,photoUrl:'img/avatar.png',followed:true,fullName:'Vadim S.',location:{country:'USA',city:'Los Angeles'},status:"Listen the music..."}
-        ]);
-    }
+const Users = (props)=>{    
     return(
         <div >
             {props.users.map((u)=><div key={u.id}>
