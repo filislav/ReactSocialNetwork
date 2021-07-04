@@ -17,6 +17,7 @@ let mapDispatchToProps = (dispatch)=>{
             dispatch(unfollowAC(userId));
         },
         setUsers:(users)=>{
+            console.log(users);
             dispatch(setUsersAC(users));
             console.log('setUsers');
         }

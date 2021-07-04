@@ -15,7 +15,6 @@ import UsersContainer from './components/Users/UsersContainer';
 
 class App extends Component { 
   render() {
-    let state = this.props.store;
     return (
       <BrowserRouter>
         <div className='app-wrapper'>
