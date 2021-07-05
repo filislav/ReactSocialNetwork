@@ -21,3 +21,20 @@
 .info span{
     color:cadetblue;
 }
+.getUsers{
+    margin-left:20px;
+}
+.pages{
+    color:cadetblue;
+    margin-left: 20px;
+}
+.pageNumb{
+    margin-right: 10px;
+}
+.pageNumb:hover{
+    cursor: pointer;
+}
+.nowActive{
+    font-weight: bold;
+
+}
