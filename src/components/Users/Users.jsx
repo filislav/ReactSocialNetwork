@@ -22,7 +22,7 @@ class Users extends Component{
         });
     }
     render(){
-        return(
+        return( //допилить здесь
             <UsersPresent totalCount={this.props.totalCount} pageSize={this.props.pageSize}
             onPageChanged={this.onPageChanged} currentPage={this.props.currentPage}/>
         )
