@@ -41,6 +41,7 @@ let usersReducer = (state=initialState,action)=>{
             return{...state, currentPage:action.currentPage};
         }
         case SET_TOTAL_COUNT:{
+            
             return{...state,totalCount:action.totalCount};
         }
     }

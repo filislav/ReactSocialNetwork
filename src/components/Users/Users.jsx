@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React,{Component} from 'react';
 import s from './Users.module.css';
-import UserPhoto from './../../assets/avatar.png';
+
+import UsersPresent from './UsersPresent';
 
 
 class Users extends Component{
@@ -21,43 +22,9 @@ class Users extends Component{
         });
     }
     render(){
-        let pagesCount = Math.ceil(this.props.totalCount/this.props.pageSize);
-        let pages =[];
-        for(let i=1;i<=pagesCount;i++){
-            pages.push(i);
-        }
         return(
-            <div >
-                <div className={s.pages}> 
-                    {pages.map((p)=>{
-                        return <span className={s.pageNumb + ' ' + (this.props.currentPage===p 
-                            && s.nowActive)} onClick={()=>{this.onPageChanged(p)}}>{p}</span>
-                    })}
-                </div>
-                {this.props.users.map((u)=><div key={u.id}>
-                <div className={s.container}>    
-                    <div>
-                        <div className={s.photo}>
-                            <img src={UserPhoto}/>
-                        </div>
-                        <div>
-                            {u.followed? <button onClick={()=>{this.props.unfollow(u.id)}}>Unfollow</button>: 
-                            <button onClick={()=>{this.props.follow(u.id)}}>Follow</button>}                      
-                        </div>
-                    </div>
-                    <div className={s.data}>
-                        <div className={s.info}>
-                            <div><span>Name: </span>{u.name}</div>
-                            <div><span>Status: </span>{u.status}</div>
-                        </div>
-                        <div className={s.info}>
-                            <div><span>City: </span>{"u.location.city"}</div>
-                            <div><span>Country: </span>{"u.location.country"}</div>
-                        </div>
-                    </div> 
-                </div>   
-                </div>)}
-            </div>
+            <UsersPresent totalCount={this.props.totalCount} pageSize={this.props.pageSize}
+            onPageChanged={this.onPageChanged} currentPage={this.props.currentPage}/>
         )
     }
 }
