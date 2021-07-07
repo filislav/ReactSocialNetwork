@@ -1,32 +1,42 @@
 import axios from 'axios';
 import React,{Component} from 'react';
 import UsersPresent from './UsersPresent';
-
+import fetchImg from './../../assets/fetch.svg';
+import s from './Users.module.css';
+import Preloader from './../Preloader/Preloader';
 
 class Users extends Component{
    
     componentDidMount(){
+        this.props.setIsFetching(true);
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`)
         .then((responce)=>{
+        this.props.setIsFetching(false);
         this.props.setUsers(responce.data.items);
         this.props.setTotalCount(54);//responce.data.totalCount);   
         });
     }
     onPageChanged = (p)=>{
         this.props.setCurrentPage(p);
+        this.props.setIsFetching(true);
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${p}&count=${this.props.pageSize}`)
         .then((responce)=>{
+        this.props.setIsFetching(false);
         this.props.setUsers(responce.data.items);   
         });
     }
     render(){
         return(
-            <UsersPresent totalCount={this.props.totalCount} pageSize={this.props.pageSize}
-            onPageChanged={this.onPageChanged} currentPage={this.props.currentPage} follow={this.props.follow}
-            unfollow={this.props.unfollow} users={this.props.users}/>
+            <> 
+                {this.props.isFetching ? <Preloader />:null}
+                <UsersPresent totalCount={this.props.totalCount} pageSize={this.props.pageSize}
+                onPageChanged={this.onPageChanged} currentPage={this.props.currentPage} follow={this.props.follow}
+                unfollow={this.props.unfollow} users={this.props.users} />
+            </>
         )
     }
 }
+//<img src={fetchImg} className={s.tRed}/> : null}
 // const Users = (props)=>{
 //     let getUsers = () =>{   
 //         if(props.users.length===0){
