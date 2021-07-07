@@ -1,7 +1,7 @@
 import './App.css';
 import { Component } from 'react';
 import Header from './components/Header/Header';
-import ProfileContainer from './components/Profile/Profile';
+import Profile from './components/Profile/Profile';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import News from './components/News/News';
 import Music from './components/Music/Music';
@@ -22,8 +22,8 @@ class App extends Component {
           <Header />
           <NavContainer />
           <div className="app-wrapper-content">
-            <Route exact path="/" render={()=><ProfileContainer />}/>s
-            <Route path="/profile" render={()=><ProfileContainer />} />
+            <Route exact path="/" render={()=><Profile />}/>
+            <Route path="/profile" render={()=><Profile/>} />
             <Route path="/dialogs" render={()=><DialogsContainer />} />
             <Route path="/news" component={News} />
             <Route path="/music" component={Music} />
