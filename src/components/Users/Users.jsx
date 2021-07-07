@@ -1,8 +1,6 @@
 import axios from 'axios';
 import React,{Component} from 'react';
 import UsersPresent from './UsersPresent';
-import fetchImg from './../../assets/fetch.svg';
-import s from './Users.module.css';
 import Preloader from './../Preloader/Preloader';
 
 class Users extends Component{
@@ -20,7 +18,7 @@ class Users extends Component{
         this.props.setCurrentPage(p);
         this.props.setIsFetching(true);
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${p}&count=${this.props.pageSize}`)
-        .then((responce)=>{
+        .then((responce)=>{   
         this.props.setIsFetching(false);
         this.props.setUsers(responce.data.items);   
         });

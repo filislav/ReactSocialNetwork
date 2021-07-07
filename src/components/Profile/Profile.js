@@ -11,7 +11,7 @@ class Profile extends Component {
                     <img src="img/Landscape-Color.jpg" />
                 </div>
                 <div className={s.block}>
-                    <ProfileInfo />
+                    <ProfileInfo profile = {this.props.profile}/>
                     <MyPostContainer />
                 </div>
             </div>

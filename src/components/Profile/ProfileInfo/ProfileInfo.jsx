@@ -8,7 +8,7 @@ class ProfileInfo extends Component{
         return(
             <div className={s.profileInfo}>
                 <Avatar />
-                <Info name="Slava" secName="Filippov" myemail="fil38@gmail.com"/>
+                <Info name={this.props.profile.fullName} secName="Filippov" myemail="fil38@gmail.com"/>
             </div>
         )
     }
