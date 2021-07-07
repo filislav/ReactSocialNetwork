@@ -1,7 +1,5 @@
 import axios from 'axios';
 import React,{Component} from 'react';
-import s from './Users.module.css';
-
 import UsersPresent from './UsersPresent';
 
 
@@ -22,9 +20,10 @@ class Users extends Component{
         });
     }
     render(){
-        return( //допилить здесь
+        return(
             <UsersPresent totalCount={this.props.totalCount} pageSize={this.props.pageSize}
-            onPageChanged={this.onPageChanged} currentPage={this.props.currentPage}/>
+            onPageChanged={this.onPageChanged} currentPage={this.props.currentPage} follow={this.props.follow}
+            unfollow={this.props.unfollow} users={this.props.users}/>
         )
     }
 }
