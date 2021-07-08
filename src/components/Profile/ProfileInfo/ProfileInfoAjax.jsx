@@ -5,7 +5,8 @@ import axios from 'axios';
 class ProfileInfoAjax extends Component{
     
     componentDidMount(){
-        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/2`).
+        let userId = this.props.match.params.userId;
+        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`).
         then((responce)=>{
             console.log(responce.data);
             this.props.setUserProfile(responce.data);
