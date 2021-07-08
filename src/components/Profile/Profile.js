@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import s from './Profile.module.css';
 import MyPostContainer from './MyPosts/MyPostContainer';
-import ProfileInfo from './ProfileInfo/ProfileInfo';
+import ProfileInfoContainer from './ProfileInfo/ProfileInfoContainer';
 
 class Profile extends Component {
     render() {
@@ -11,7 +11,7 @@ class Profile extends Component {
                     <img src="img/Landscape-Color.jpg" />
                 </div>
                 <div className={s.block}>
-                    <ProfileInfo />
+                    <ProfileInfoContainer />
                     <MyPostContainer />
                 </div>
             </div>

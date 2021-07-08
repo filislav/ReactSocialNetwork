@@ -28,7 +28,8 @@ export const profileReducer = (state = initialState,action)=>{
             break;
         }
         case SET_USER_PROFILE:{
-           return {...state,profile:action.profile}
+           stateCopy.profile = action.profile;
+           break;
         }
         default:{
             return state;
@@ -39,5 +40,5 @@ export const profileReducer = (state = initialState,action)=>{
 export const addPost = ()=>({type:ADD_POST});
 export const updateNewPostText = (text)=>
 ({type:UPDATE_NEW_POST_CHANGE,newText: text});
-export const setUserProfile = (profile)=>({type:SET_USER_PROFILE},profile);
+export const setUserProfile = (profile)=>({type:SET_USER_PROFILE,profile:profile});
 export default profileReducer;
