@@ -8,7 +8,7 @@ let initialState = {
     {id:3,message:"It's my second post",likeCount:13}
     ],
     newPostText:'',
-    profile:{fullName:'slava'}         
+    profile:{fullName:'slava',photos:{large:'img/avatar.png'}}         
 };
 
 export const profileReducer = (state = initialState,action)=>{

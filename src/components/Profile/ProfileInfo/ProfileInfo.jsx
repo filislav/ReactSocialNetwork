@@ -6,9 +6,14 @@ import Info from "./Info/Info";
 class ProfileInfo extends Component{
     render(){
         return(
-            <div className={s.profileInfo}>
-                <Avatar />
-                <Info name={this.props.profile.fullName} secName="Filippov" myemail="fil38@gmail.com"/>
+            <div>
+                <div className={s.profile_img}>
+                        <img src="img/Landscape-Color.jpg" />
+                    </div>
+                <div className={s.profileInfo}>
+                    <Avatar photo={this.props.profile.photos.large}/>
+                    <Info name={this.props.profile.fullName} secName="Filippov" myemail="fil38@gmail.com"/>
+                </div>
             </div>
         )
     }
