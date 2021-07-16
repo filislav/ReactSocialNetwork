@@ -1,6 +1,6 @@
 import './App.css';
 import { Component } from 'react';
-import Header from './components/Header/Header';
+import HeaderContainer from './components/Header/HeaderContainer';
 import Profile from './components/Profile/Profile';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import News from './components/News/News';
@@ -19,7 +19,7 @@ class App extends Component {
       <BrowserRouter>
         <div className='app-wrapper'>
           <Preloader />
-          <Header />
+          <HeaderContainer />
           <NavContainer />
           <div className="app-wrapper-content">
             <Route exact path="/" render={()=><Profile />}/>

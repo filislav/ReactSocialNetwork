@@ -2,6 +2,7 @@
     grid-area: h;
     background-color: cadetblue;
     display:flex;
+    justify-content: space-between;
 }
   .header img {
     margin-top: 5px;
@@ -16,4 +17,18 @@
   color: gold;
   font-weight: bold;
   text-shadow: 1px 1px 1px white;
+}
+.loginBlock{
+  margin-top: 20px;
+  margin-right:10px;
+}
+.loginBlock a{
+  height:100%;
+  display: block;
+  color:white;
+  text-decoration: none;
+  font-size: 20px;
+  margin-left:20px;
+  justify-content: center;
+  align-items: center;
 }
