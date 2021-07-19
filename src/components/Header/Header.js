@@ -9,7 +9,7 @@ class Header extends Component {
                 <div><img src="/img/snLogo.png" /></div>
                 <div><p className={s.name}>SoN</p></div>
                 <div className={s.loginBlock}>
-                    <NavLink to='/login'>Login</NavLink>
+                    {this.props.isAuth?<p className={s.loginPara}>{this.props.login}</p> : <NavLink to='/login'>Login</NavLink>}
                 </div>               
             </header>
         )
