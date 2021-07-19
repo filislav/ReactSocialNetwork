@@ -8,7 +8,7 @@ class Users extends Component{
     componentDidMount(){
         this.props.setIsFetching(true);
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`,{
-            withCredentials:true
+            withCredentials:true //с авторизацией
         })
         .then((responce)=>{
         this.props.setIsFetching(false);
