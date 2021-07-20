@@ -15,3 +15,16 @@ export const userAPI = {
         });
     }
 }
+export const authAPI = {
+    authMe(){
+        return axiosInstance.get(`auth/me`);
+    }
+}
+export const followAPI = {
+    follow(id){
+        return axiosInstance.post(`follow/${id}`);
+    },
+    unfollow(id){
+        return axiosInstance.delete(`follow/${id}`);
+    }
+}
