@@ -27,7 +27,8 @@ class Users extends Component{
                 {this.props.isFetching ? <Preloader />:null}
                 <UsersPresent totalCount={this.props.totalCount} pageSize={this.props.pageSize}
                 onPageChanged={this.onPageChanged} currentPage={this.props.currentPage} follow={this.props.follow}
-                unfollow={this.props.unfollow} users={this.props.users} />
+                unfollow={this.props.unfollow} users={this.props.users} followInProgress={this.props.followInProgress}
+                setFollowInProgress={this.props.setFollowInProgress}/>
             </>
         )
     }

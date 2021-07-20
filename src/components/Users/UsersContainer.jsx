@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { follow, setUsers, unfollow ,setCurrentPage,setTotalCount,setIsFetching} from '../../redux/usersReducer';
+import { follow, setUsers, unfollow ,setCurrentPage,setTotalCount,setIsFetching,setFollowInProgress} from '../../redux/usersReducer';
 import Users from './Users';
 
 let mapStateToProps = (state)=>{
@@ -9,7 +9,8 @@ let mapStateToProps = (state)=>{
         pageSize:state.users.pageSize,
         totalCount:state.users.totalCount,
         currentPage:state.users.currentPage,
-        isFetching:state.users.isFetching
+        isFetching:state.users.isFetching,
+        followInProgress:state.users.followInProgress
     }
 }
 let UsersContainer = connect(mapStateToProps,{
@@ -18,6 +19,7 @@ let UsersContainer = connect(mapStateToProps,{
     setUsers,
     setCurrentPage,
     setTotalCount,
-    setIsFetching
+    setIsFetching,
+    setFollowInProgress
 })(Users);
 export default UsersContainer;

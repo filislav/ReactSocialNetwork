@@ -28,18 +28,23 @@ let UsersPresent = (props)=>{
                     </div>
                 </NavLink>  
                     <div>
-                        {u.followed? <button onClick={()=>{
+                        {u.followed? <button disabled={props.followInProgress.some(id=>id===u.id)} onClick={()=>{
+                            props.setFollowInProgress(true,u.id);
                             followAPI.unfollow(u.id).then(responce=>{
                                 if(responce.data.resultCode == 0){
                                     props.unfollow(u.id);
                                 }
+                                props.setFollowInProgress(false,u.id);
                             });
-                        }}>Unfollow</button>: 
-                        <button onClick={()=>{
+                        }}>Unfollow</button>:
+                        //some() - если хоть один элемент массива 
+                        <button disabled={props.followInProgress.some(id=>id===u.id)} onClick={()=>{
+                            props.setFollowInProgress(true,u.id);
                             followAPI.follow(u.id).then(responce=>{
                                 if(responce.data.resultCode == 0){
                                     props.follow(u.id);
                                 }
+                                props.setFollowInProgress(false,u.id);
                             });
                             
                         }}>Follow</button>}                      
