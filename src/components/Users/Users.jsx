@@ -6,20 +6,11 @@ import {userAPI} from './../../api/api';
 class Users extends Component{
    
     componentDidMount(){
-        this.props.setIsFetching(true);
-        userAPI.getUsers(this.props.currentPage,this.props.pageSize).then((data)=>{
-        this.props.setIsFetching(false);
-        this.props.setUsers(data.items);
-        this.props.setTotalCount(54);//responce.data.totalCount);   
-        });
+        this.props.getUsers(this.props.currentPage,this.props.pageSize);
     }
     onPageChanged = (p)=>{
         this.props.setCurrentPage(p);
-        this.props.setIsFetching(true);
-        userAPI.getUsers(p,this.props.pageSize).then((data)=>{   
-        this.props.setIsFetching(false);
-        this.props.setUsers(data.items);   
-        });
+        this.props.getUsers(p,this.props.pageSize);
     }
     render(){
         return(
