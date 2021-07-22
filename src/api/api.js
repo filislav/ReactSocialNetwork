@@ -28,3 +28,8 @@ export const followAPI = {
         return axiosInstance.delete(`follow/${id}`);
     }
 }
+export const profileAPI = {
+    getUserProfile(userId){
+        return axiosInstance.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`);
+    }
+}

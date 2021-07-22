@@ -6,11 +6,12 @@ class ProfileInfoAjax extends Component{
     
     componentDidMount(){
         let userId = this.props.match.params.userId;
-        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`).
-        then((responce)=>{
-            console.log(responce.data);
-            this.props.setUserProfile(responce.data);
-        });
+        this.props.getUserProfile(userId);
+        // axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`).
+        // then((responce)=>{
+        //     console.log(responce.data);
+        //     this.props.setUserProfile(responce.data);
+        // });
     }
     render(){
         return(
