@@ -15,7 +15,7 @@ class ProfileInfoAjax extends Component{
     }
     render(){
         return(
-            <ProfileInfo profile={this.props.profile}/>
+            <ProfileInfo profile={this.props.profile} isAuth={this.props.isAuth}/>
         )
     }
 }

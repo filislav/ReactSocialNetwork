@@ -10,7 +10,7 @@ import { BrowserRouter,Route } from 'react-router-dom';
 import Preloader from './components/Preloader/Preloader';
 import NavContainer from './components/Nav/NavContainer';
 import UsersContainer from './components/Users/UsersContainer';
-
+import Login from'./components/Login/Login';
 
 
 class App extends Component { 
@@ -23,12 +23,14 @@ class App extends Component {
           <NavContainer />
           <div className="app-wrapper-content">
             <Route exact path="/" render={()=><Profile />}/>
+            <Route path="/profile" render={()=><Profile />}/>
             <Route path="/profile/:userId" render={()=><Profile/>} />
             <Route path="/dialogs" render={()=><DialogsContainer />} />
             <Route path="/news" component={News} />
             <Route path="/music" component={Music} />
             <Route path="/settings" component={Settings} />
             <Route path="/users" render={()=><UsersContainer />} />
+            <Route path="/login" render={()=><Login />} />
           </div>
         </div>
       </BrowserRouter>

@@ -7,7 +7,8 @@ import { withRouter } from 'react-router-dom';
 
 let mapStateToProps = (state)=>{
     return{
-        profile:state.profile.profile
+        profile:state.profile.profile,
+        isAuth:state.auth.isAuth
     }
 }
 
