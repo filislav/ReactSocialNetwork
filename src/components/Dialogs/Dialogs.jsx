@@ -7,9 +7,7 @@ import {Redirect} from 'react-router-dom';
 
 class Dialogs extends Component{
     render(){
-        if(!this.props.isAuth){
-            return <Redirect to={"/login"} />
-        }       
+              
         return(
             <div className={s.dialog}>
                 <DialogItems dialogs = {this.props.dialogs}/>

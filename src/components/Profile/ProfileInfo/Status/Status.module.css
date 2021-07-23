@@ -1,0 +1,11 @@
+.status{
+    padding:5px;
+    margin-left: 25px;
+    border:1px solid cadetblue;
+    border-radius: 5px;;
+    width:200%;
+    background: rgb(214, 226, 226);
+}
+.input{
+    width:96%;
+}

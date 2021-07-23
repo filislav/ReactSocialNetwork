@@ -5,10 +5,7 @@ import Info from "./Info/Info";
 import {Redirect} from 'react-router-dom';
 
 class ProfileInfo extends Component{
-    render(){
-        if(!this.props.isAuth){
-            return <Redirect to={"/login"} />
-        }  
+    render(){ 
         return(
             <div>
                 <div className={s.profile_img}>

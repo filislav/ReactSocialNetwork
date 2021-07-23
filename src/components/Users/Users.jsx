@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import UsersPresent from './UsersPresent';
 import Preloader from './../Preloader/Preloader';
-import {userAPI} from './../../api/api';
+
 
 class Users extends Component{
    
