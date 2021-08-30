@@ -13,7 +13,8 @@ class ProfileInfo extends Component{
                     </div>
                 <div className={s.profileInfo}>
                     <Avatar photo={this.props.profile.photos.large}/>
-                    <Info name={this.props.profile.fullName} secName="Filippov" myemail="fil38@gmail.com"/>
+                    <Info name={this.props.profile.fullName} secName="Filippov" myemail="fil38@gmail.com" status={this.props.status} 
+                    updateStatus={this.props.updateStatus}/>
                 </div>
             </div>
         )

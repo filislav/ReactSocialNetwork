@@ -13,7 +13,7 @@ class Info extends Component{
                 <p>{name}</p>
                 <p>{secName}</p>
                 <p>{email}</p>
-                <Status status = "It's i am"/>
+                <Status status ={this.props.status} updateStatus={this.props.updateStatus}/>
             </div>
         )
     }

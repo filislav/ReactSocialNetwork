@@ -3,6 +3,7 @@ import { profileAPI } from "../api/api";
 export const ADD_POST = 'ADD-POST';
 export const UPDATE_NEW_POST_CHANGE = 'UDATE-NEW-POST-CHANGE';
 export const SET_USER_PROFILE = 'SET_USER_PROFILE';
+export const SET_STATUS = 'SET_STATUS';
 
 let initialState = {
     posts:[{id:1,message:'Hi, how are you?',likeCount:34},
@@ -10,7 +11,8 @@ let initialState = {
     {id:3,message:"It's my second post",likeCount:13}
     ],
     newPostText:'',
-    profile:{fullName:'slava',photos:{large:'img/avatar.png'}}         
+    profile:{fullName:'slava',photos:{large:'img/avatar.png'}},
+    status:'Good',         
 };
 
 export const profileReducer = (state = initialState,action)=>{
@@ -33,6 +35,9 @@ export const profileReducer = (state = initialState,action)=>{
            stateCopy.profile = action.profile;
            break;
         }
+        case SET_STATUS:{
+            stateCopy.status = action.status;
+        }
         default:{
             return state;
         }
@@ -50,5 +55,16 @@ export const getUserProfile = (userId)=>{
             dispatch(setUserProfile(responce.data));
         });
     }
+}
+export const setStatus=(status)=>({type:SET_STATUS,status});
+export const getStatus = (userId)=>(dispatch)=>{
+    profileAPI.getStatus(userId).then(responce=>{dispatch(setStatus(responce.data))})
+}
+export const updateStatus = (status)=>(dispatch)=>{
+    profileAPI.updateStatus(status).then(responce=>{
+        if(responce.data.resultCode===0){
+            dispatch(setStatus(status));
+        }
+    })
 }
 export default profileReducer;
